@@ -12,9 +12,11 @@ DiccAP leer_mapa(std::string filename){
     return nullptr;
   }
   else {
+    //new_file >>std::noskipws;
     std::string ch;
     while (!new_file.eof()){
-      new_file >>ch;
+      //new_file>> ch;
+      ch=new_file.get();
       if (d->map.find(ch) == d->map.end() ){
         d->map[ch] = i++;
       }

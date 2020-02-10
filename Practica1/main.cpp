@@ -1,6 +1,6 @@
 #include "include/Diccionario.h"
 #include "include/AffineCipher.h"
-#include "include/VigenareCipher.h"
+#include "include/VigenereCipher.h"
 #include <iterator>
 #include <map>
 #include <string>
@@ -10,7 +10,7 @@ void ParseAffineKey(std::string key,int *a,int *b){
   sscanf(key.c_str(),"%d,%d",a,b);
 }
 void Vigenare(std::string cifrar_or_descifrar,std::string key,std::string filename){
-  VigenareCipher vc(d);
+  VigenereCipher vc(d);
   std::string message,cmessage,line;
   std::fstream infile;
   std::fstream outfile;

@@ -1,11 +1,11 @@
 #include "include/Diccionario.h"
-#include "include/VigenareCipher.h"
+#include "include/VigenereCipher.h"
 using namespace std;
 
-VigenareCipher::VigenareCipher(DiccAP dic){
+VigenereCipher::VigenereCipher(DiccAP dic){
   d = dic;
 }
-std::string VigenareCipher::Encrypt(std::string text,std::string key){
+std::string VigenereCipher::Encrypt(std::string text,std::string key){
   int key_len = key.length();
   std::string ctext = "";
   std::string aux;
@@ -24,7 +24,7 @@ std::string VigenareCipher::Encrypt(std::string text,std::string key){
   }
   return ctext;
 }
-std::string VigenareCipher::Decrypt(std::string ctext,std::string key){
+std::string VigenereCipher::Decrypt(std::string ctext,std::string key){
   int key_len = key.length();
   std::string message = "";
   std::string aux;
@@ -43,7 +43,7 @@ std::string VigenareCipher::Decrypt(std::string ctext,std::string key){
   }
   return message;
 }
-std::string VigenareCipher::GenerateRandomKey(int length, DiccAP d)
+std::string VigenereCipher::GenerateRandomKey(int length, DiccAP d)
 {
 
   std::string found;

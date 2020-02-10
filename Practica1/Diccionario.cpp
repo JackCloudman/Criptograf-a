@@ -14,17 +14,18 @@ DiccAP leer_mapa(std::string filename){
   else {
     //new_file >>std::noskipws;
     std::string ch;
-    while (!new_file.eof()){
-      //new_file>> ch;
-      ch=new_file.get();
-      if (d->map.find(ch) == d->map.end() ){
-        d->map[ch] = i++;
+    std::string aux;
+    std::getline(new_file, ch);
+    for(char& c : ch) {
+      aux =c;
+      if (d->map.find(aux) == d->map.end() ){
+        d->map[aux] = i++;
       }
     }
     new_file.close();
   }
   d->len = d->map.size();
-    return d;
+  return d;
 }
 void imprimir_diccionario(DiccAP d){
   cout<<"LEN:"<<d->len<<"\n";

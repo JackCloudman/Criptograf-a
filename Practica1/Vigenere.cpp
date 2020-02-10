@@ -43,3 +43,25 @@ std::string VigenareCipher::Decrypt(std::string ctext,std::string key){
   }
   return message;
 }
+std::string VigenareCipher::GenerateRandomKey(int length, DiccAP d)
+{
+
+  std::string found;
+
+  for (int i = 0; i < length; ++i)
+  {
+
+    std::map<std::string,int>::iterator item =d->map.begin();
+    std::advance(item, rand()%d->map.size());
+    int somevalue=item->second;
+
+    for (std::map<std::string,int>::iterator it = d->map.begin(); it != d->map.end(); ++it)
+      if (it->second == somevalue)
+      {
+          found+= it->first;
+          //cout << found;
+      }
+
+  }
+  return found;
+}

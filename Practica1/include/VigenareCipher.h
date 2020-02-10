@@ -8,6 +8,7 @@ class VigenareCipher
       VigenareCipher(DiccAP dic);
       std::string Encrypt(std::string text,std::string key);
       std::string Decrypt(std::string ctext,std::string key);
+      std::string GenerateRandomKey(int length, DiccAP d);
     private:
       DiccAP d;
 };

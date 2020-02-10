@@ -5,6 +5,7 @@
 #include "Utils.h"
 
 #include<stdlib.h>
+#include <algorithm>
 class AffineCipher
 {
     public:

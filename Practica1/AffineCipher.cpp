@@ -20,8 +20,10 @@ std::string AffineCipher::Decrypt(std::string cmessage,int keya,int keyb){
   std::string aux;
   Euclides e;
   int inverso = e.GetInverso(keya,d->len);
-  if(!inverso)
-    return message;
+  if(!inverso){
+      cout<<"Llave invalida!\n";
+      exit(1);
+  }
   for(char &c: cmessage){
     aux = c;
     int val = Modulo((d->map[aux]-keyb)*inverso,d->len);

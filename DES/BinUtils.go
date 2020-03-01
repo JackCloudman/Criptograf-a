@@ -49,3 +49,25 @@ func BinXOR(a, b []bool) ([]bool, error) {
 	}
 	return result, nil
 }
+func Permutar(original []bool, tabla []int) []bool {
+	result := make([]bool, len(tabla))
+	for i, pos := range tabla {
+		result[i] = original[pos]
+	}
+	return result
+}
+func ShiftLeft(arr []bool, num int) []bool {
+	var left bool
+	for i := 0; i < num; i++ {
+		left, arr = arr[0], arr[1:]
+		arr = append(arr, left)
+	}
+	return arr
+}
+func SplitArray(arr []bool, i int) ([]bool, []bool) {
+	tempA := make([]bool, i)
+	tempB := make([]bool, i)
+	copy(tempA, arr[:i])
+	copy(tempB, arr[i:])
+	return tempA, tempB
+}

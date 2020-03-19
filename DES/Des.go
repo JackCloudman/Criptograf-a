@@ -1,5 +1,7 @@
 package main
 
+import "math/rand"
+
 var permutacion10 = []int{2, 4, 1, 6, 3, 9, 0, 8, 7, 5}
 var permutacion8 = []int{5, 2, 6, 3, 7, 4, 9, 8}
 var permutacionInicial = []int{1, 5, 2, 0, 3, 7, 4, 6}
@@ -80,4 +82,15 @@ func ConsultarS1(fila1, fila2, columna1, columna2 bool) []bool {
 	fila := getInt([]bool{fila1, fila2})
 	columna := getInt([]bool{columna1, columna2})
 	return CajaS1[fila][columna]
+}
+func GenerateRandomIV() []bool {
+	key := []bool{false, false, false, false, false, false, false, false, false, false}
+	for i := 0; i < 8; i++ {
+		if rand.Intn(2) == 0 {
+			key[i] = false
+		} else {
+			key[i] = true
+		}
+	}
+	return key
 }

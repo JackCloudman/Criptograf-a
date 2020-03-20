@@ -34,7 +34,7 @@ func main() {
 			IV = TextToBin(os.Args[3])
 		}
 	} else {
-		outFilename = filename + "des_decrypted"
+		outFilename = filename + ".des_decrypted"
 		if os.Args[2] == "-rKey" {
 			fmt.Println("No random key para descifrar")
 			return

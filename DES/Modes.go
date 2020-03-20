@@ -1,7 +1,7 @@
 package main
 
-func OFBMode(key []bool, data []byte, c chan byte) {
-	IV := DesEncrypt(GenerateRandomIV(), key)
+func OFBMode(key, IV []bool, data []byte, c chan byte) {
+	IV = DesEncrypt(IV, key)
 	for _, i := range data {
 		imessage := getArr(i, 8)
 		result, _ := BinXOR(imessage, IV)

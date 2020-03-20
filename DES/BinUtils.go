@@ -71,3 +71,14 @@ func SplitArray(arr []bool, i int) ([]bool, []bool) {
 	copy(tempB, arr[i:])
 	return tempA, tempB
 }
+func TextToBin(original string) []bool {
+	bin := make([]bool, len(original))
+	for index, i := range original {
+		if string(i) == "1" {
+			bin[index] = true
+		} else {
+			bin[index] = false
+		}
+	}
+	return bin
+}

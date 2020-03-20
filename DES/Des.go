@@ -84,8 +84,19 @@ func ConsultarS1(fila1, fila2, columna1, columna2 bool) []bool {
 	return CajaS1[fila][columna]
 }
 func GenerateRandomIV() []bool {
-	key := []bool{false, false, false, false, false, false, false, false, false, false}
+	IV := []bool{false, false, false, false, false, false, false, false}
 	for i := 0; i < 8; i++ {
+		if rand.Intn(2) == 0 {
+			IV[i] = false
+		} else {
+			IV[i] = true
+		}
+	}
+	return IV
+}
+func GenerateRandomKey() []bool {
+	key := []bool{false, false, false, false, false, false, false, false, false, false}
+	for i := 0; i < 10; i++ {
 		if rand.Intn(2) == 0 {
 			key[i] = false
 		} else {

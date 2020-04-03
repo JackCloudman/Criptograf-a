@@ -20,9 +20,8 @@ def main():
             print("Longitud de la llave invalido")
             exit(1)
         keyS = aes.KeyExpansion(key, 24, 208)
-        print(keyS)
         hexlist = [hex(x)[2:] if x>15 else "0"+hex(x)[2:] for x in keyS]
-        matrixKey = [ hexlist[i:i+24] for i in range(0,len(hexlist),24)]
+        matrixKey = [ hexlist[i:i+16] for i in range(0,len(hexlist),16)]
         #f.write(str(matrixKey))
 
     # Formato

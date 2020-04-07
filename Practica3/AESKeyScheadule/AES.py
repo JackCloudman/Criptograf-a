@@ -56,6 +56,7 @@ class AES():
         while len(eKey) < eKeySize:eKey.append(0)
 
         for j in range(KeySize): eKey[j] = CKey[j]
+        print(eKey)
 
         i += KeySize
         while i < eKeySize:
